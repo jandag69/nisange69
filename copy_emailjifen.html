@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy to Clipboard</title>
+    <style>
+        a {
+            font-weight: bold;
+            text-decoration: none;
+            color: #007BFF;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <p>点击 <a id="copyLink" onclick="copyToClipboard()">76jifen1@gmail.com</a> 复制</p>
+
+    <script>
+        function copyToClipboard() {
+            const text = "76jifen1@gmail.com";
+            navigator.clipboard.writeText(text).then(() => {
+                alert("已复制: " + text);
+            }).catch(err => {
+                alert("复制失败: " + err);
+            });
+        }
+    </script>
+</body>
+</html>
